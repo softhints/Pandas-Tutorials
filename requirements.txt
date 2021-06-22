@@ -1,0 +1,4 @@
+jupyterlab
+pandas
+networkx
+pydot
