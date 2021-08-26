@@ -1,4 +1,19 @@
 jupyterlab
 pandas
+
+# performance
+dask
+swifter
+tqdm
+
+
+# geocoding
+geocoder
+Shapely
+geopy
+
+# visualization
+plotly
+gmplot
 networkx
 pydot
