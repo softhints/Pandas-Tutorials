@@ -1,4 +1,7 @@
 jupyterlab
+jupyter_contrib_nbextensions
+
+# data science
 pandas
 
 # performance
