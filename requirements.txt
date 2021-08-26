@@ -3,6 +3,7 @@ jupyter_contrib_nbextensions
 
 # data science
 pandas
+kaggle
 
 # performance
 dask
@@ -20,3 +21,6 @@ plotly
 gmplot
 networkx
 pydot
+
+# other
+pyperclip
