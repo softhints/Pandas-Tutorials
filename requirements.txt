@@ -5,6 +5,9 @@ jupyter_contrib_nbextensions
 pandas
 kaggle
 
+# ploting
+matplotlib
+
 # performance
 dask
 swifter
