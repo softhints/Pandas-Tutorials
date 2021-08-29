@@ -4,6 +4,7 @@ jupyter_contrib_nbextensions
 # data science
 pandas
 kaggle
+scipy
 
 # ploting
 matplotlib
