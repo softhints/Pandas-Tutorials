@@ -6,6 +6,7 @@ pandas
 kaggle
 scipy
 
+
 # ploting
 matplotlib
 
@@ -25,6 +26,7 @@ plotly
 gmplot
 networkx
 pydot
+seaborn
 
 # other
 pyperclip
