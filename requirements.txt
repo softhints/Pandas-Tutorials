@@ -30,3 +30,6 @@ seaborn
 
 # other
 pyperclip
+
+# excel
+openpyxl
