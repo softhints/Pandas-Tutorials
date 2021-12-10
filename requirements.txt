@@ -29,7 +29,8 @@ pydot
 seaborn
 
 # other
-pyperclip
+pyperclip # copy to clipboard
+Faker # fake data generation
 
 # excel
 openpyxl
