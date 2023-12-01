@@ -1,0 +1,76 @@
+# cat,category,code,code2,description,category summary,image
+1,Setup,"import pandas as pd
+import numpy as np","library(dplyr)
+library(ggplot2) # error if missing
+require(ggplot2) # warning",Import libraries and modules,Import and package installation,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_basics.png
+1,Setup,pip install pandas,install.packages('ggplot2'),install package,Import and package installation,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_basics.png
+1,Setup,https://pypi.org/,https://cran.r-project.org/web/packages/,Search Packages,Import and package installation,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_basics.png
+2,Data Structures,s = pd.Series(np.arange(5)),s <- 0:4,Pandas series vs R vectors,Pandas Series vs R Array DataFrame comparison,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_data_structures-1.png
+2,Data Structures,s[0],s[0],Get first element of array or Series,Pandas Series vs R Array DataFrame comparison,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_data_structures-1.png
+2,Data Structures,"df = pd.DataFrame(
+    {""col_1"": [11, 12, 13],
+     ""col_2"": [21, 22, 23]},
+    index=[0, 1, 3])","df = data.frame (
+    col_1  = c(11, 12, 13),
+    col_2 = c(21, 22, 23)
+)
+rownames(df) <- c(0,1,3)",Pandas vs R DataFrame,Pandas Series vs R Array DataFrame comparison,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_data_structures-1.png
+,Data Structures,"import numpy as np
+import pandas as pd
+data = np.random.randn(10, 3)
+cols = list(""abc"")
+pd.DataFrame(data, columns=cols)","data.frame(a=rnorm(10), b=rnorm(10), c=rnorm(10))",Create random DataFrame,Pandas Series vs R Array DataFrame comparison,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_data_structures-1.png
+3,Read,df = pd.read_csv('file.csv'),df <- read.csv('file.csv'),Read CSV file,Import Data R vs Pandas,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_read.png
+3,Read,pd.read_json('file.json'),"library(jsonlite)
+df <- read_json('file.json')",Read JSON file,Import Data R vs Pandas,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_read.png
+3,Read,pd.read_csv('https://example.com/file.csv'),read.csv(url('https://example.com/file.csv')),Read data from URL,Import Data R vs Pandas,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_read.png
+3,Read,df = pd.read_fwf('delim_file.txt'),df <- read_fwf('delim_file.txt'),Read delimited file,Import Data R vs Pandas,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_read.png
+4,Write,df.to_csv('file.csv'),"write.csv(df, 'data.csv', row.names=FALSE)",Writes to a CSV file,Data export - Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_write.png
+4,Write,df.to_json('file.json'),"js_file <- jsonlite::toJSON(df2, pretty = TRUE)
+write(js_file, 'file.json')",Writes to a file in JSON format,Data export - Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_write.png
+5,Inspect Data,df.shape,dim(df),return dimensions,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,df.head(6),"head(df, 6)",First n rows,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,df.tail(6),"tail(df, 6)",Last n rows,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,df.describe(),summary(df),Summary statistics,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,"df.loc[:, :'a'].describe()","summary(df[, 'a'])",Describe columns,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,df['A'].mean(),"mean(df[, 'a'])",Statistical functions,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+5,Inspect Data,"	
+df.sample(n=10)","sample_n(df, 10)",Sample n random rows,"Statistics, samples and summary of the data",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_info.png
+6,Select,"df.loc[1:3, :]","df[2:4,]",Select first N rows - all columns,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,"df.loc[[1, 2, 3], :]","df[c(2,3,4),]",Select rows by index,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,"df.loc[:, ['a', 'b']].copy()","copy <-data.frame(df[,c('a','b')])",Select columns by name(copy),"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,"df.loc[:, ['a']]","df[, 'a']",Select columns by name(reference),"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,"df.loc[1:3, ['b', 'a']]","df[2:4, c('b','a')]",Subset rows and columns,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,"df.loc[[3,1], ['b', 'a']]","df[4:2, c('b','a')]",Reverse selection,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,df[df['a'].isna()],"df[is.na(df$a), ]",Select NaN values,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+6,Select,df['a'].dropna(),"df[!is.na(df$a), ]",Select non NaN values,"Select data by index, by label, get subset",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_select.png
+7,Add rows/columns,df['new col'] = df['col'] * 100,"df$new <- df[, 'a']  * 100",Add new column based on other column,Add new columns and rows,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_add.png
+7,Add rows/columns,df['new col'] = False,df$new <-FALSE,Add new column single value,Add new columns and rows,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_add.png
+7,Add rows/columns,"df.loc[-1] = [1, 2, 3]","df[nrow(df) + 1,] = c(1,2,3)",Add new row at the end of DataFrame,Add new columns and rows,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_add.png
+7,Add rows/columns,"df.append(df2, ignore_index = True)","rbind(df, df2)",add rows from DataFrame to existing DataFrame,Add new columns and rows,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_add.png
+8,Drop rows/columns/nan,s.drop(1),s[!(s == 1)],(Series) Drop values from Series by index (row axis),Drop data from DataFrame,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_drop.png
+8,Drop rows/columns/nan,"s.drop([1, 2])","s[!(s %in% c(1,2))]",(Series) Drop values from Series by index (row axis),Drop data from DataFrame,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_drop.png
+8,Drop rows/columns/nan,"df.drop('b' , axis=1) ","subset(df, select = -c(b))",Drop column by name col_1 (column axis),Drop data from DataFrame,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_drop.png
+8,Drop rows/columns/nan,df.dropna(),"library(tidyr)
+df %>% drop_na()",Drops all rows that contain null values,Drop data from DataFrame,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_drop.png
+8,Drop rows/columns/nan,df.dropna(axis=1),"janitor::remove_empty(df, which = 'cols')",Drops all columns that contain null values,Drop data from DataFrame,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_drop.png
+9,Sort values/index,"sorted([2,3,1])","sort(c(2,3,1))",sort array of values,Sorting and rank values in Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_sort.png
+9,Sort values/index,"sorted([2,3,1], reverse=True)","sort(c(2,3,1),decreasing=TRUE)",sort in reverse order,Sorting and rank values in Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_sort.png
+9,Sort values/index,df['a'].sort_values(),"sort(df[, 'a'])",sort DataFrame by column,Sorting and rank values in Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_sort.png
+9,Sort values/index,"df.sort_values(['a', 'b'], ascending=[False, True])","df[order(-df$a, df$b), ]",sort DataFrame by multiple columns,Sorting and rank values in Pandas vs R,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_sort.png
+10,Filter,"df.loc[:, df.isna().any()]","apply(df, 2, function(x) any(is.na(x)))",find columns with na,Filter data based on multiple criteria,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_filter.png
+10,Filter,"df.loc[df.isna().any(), :]","apply(df, 1, function(x) any(is.na(x)))",find rows with na,Filter data based on multiple criteria,
+10,Filter,df[df['col_1'] > 100],"filter(df, col_1 > 100)",Values greater than X,Filter data based on multiple criteria,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_filter.png
+10,Filter,df[(df['a']=='a')&(df['b']>=10)],"filter(df, a == 'a', b > 10)",Filter Multiple Conditions - & - and; , - or,Filter data based on multiple criteria
+10,Filter,df[df['a'] == 'test'],"filter(df, a == 'test')",filter by sting value,Filter data based on multiple criteria,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_filter.png
+10,Filter,df[(df['a'] == 'test') & (df['b'] == 'a2') ],"filter(df, a == 'test', b == 'a2' )",combine conditions,Filter data based on multiple criteria,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_filter.png
+11,Group by,df.groupby('a'),"group_by(df, 'a')",Group by single column,Group by and summarize data,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_groupby.png
+11,Group by,"df.groupby(['a', 'b']).c.sum()","aggregate(df$b, by=list(a=df$a), FUN=sum)",group by multiple columns and sum third,Group by and summarize data,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_groupby.png
+11,Group by,df['a'].value_counts(),"dplyr::count(df, a, sort = TRUE)",group by and count,Group by and summarize data,https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_groupby.png
+12,Convert,df['a'].fillna(0),"library(dplyr)
+df <- df %>%
+mutate(a = if_else(is.na(a), 0, a))",replace NA values,"Convert to date, string, numeric",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_convert.png
+12,Convert,"df.replace('..', None)",df[df == '..'] <- NA,convert .. to NA,"Convert to date, string, numeric",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_convert.png
+12,Convert,df['col_1'].astype('int64'),"strtoi(c('1', '2'), base = 0L)",convert string to int,"Convert to date, string, numeric",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_convert.png
+12,Convert,"pd.to_datetime(df['date'], format='%Y-%m-%d')","dates <- c('2023-09-04', '2023-09-06')
+as.Date(dates, format='%Y-%m-%d')",convert string to date,"Convert to date, string, numeric",https://datascientyst.com/content/images/2022/04/pandas_cheat_sheet_convert.png
